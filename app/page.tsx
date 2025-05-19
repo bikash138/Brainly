@@ -1,10 +1,26 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
-export default function Home() {
+import { signIn, auth } from "@/auth"
+import { Button } from "@/components/ui/button"
+ 
+export default async function SignIn() {
+
+  const session = await auth()
+  if(!session?.user){
+    return (
+      <div>
+        <p>User Signed In as: {session?.user?.name}</p>
+      </div>
+    )
+  }
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <Button className="">Hi there!!</Button>
-    </div>
-  );
-}
+    <form
+      action={async () => {
+        "use server"
+        await signIn("github")
+      }}
+    >
+      <Button type="submit">Signin with GitHub</Button>
+    </form>
+  )
+} 
