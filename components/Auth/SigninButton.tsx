@@ -1,5 +1,11 @@
-import { signIn } from "@/auth"
+"use client"
+import { Button } from "@/components/ui/button"
+
 
 export const SignInButton = () => {
-    return <button onClick={() => signIn("github")}>Sign In With Github</button>
+    return (
+        <div>
+            
+        </div>
+    )
 }
