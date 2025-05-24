@@ -10,3 +10,8 @@ export const SigninSchema = z.object({
     email: z.string().email(),
     password: z.string(),
 })
+
+// export const AddContentSchema = z.object({
+//     title: z.string()
+//     password: z.string(),
+// })
