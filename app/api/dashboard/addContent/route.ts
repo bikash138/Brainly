@@ -14,7 +14,7 @@ export async function POST(req: NextRequest){
             }
         })
         return NextResponse.json({
-            message: "COntent Added Successfull",
+            message: "Content Added Successfull",
             thought
         })
 
